@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Leaflet Example</title>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css">
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<style>
+		html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #mapid {
+        height: 100%;
+      }
+	</style>
+</head>
+<body>
+	<div id="mapid"></div>
+
+	<script>
+		var mymap = L.map('mapid').setView([37.5550910, -77.4584330], 18);
+
+		L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
+		    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		    maxZoom: 18,
+		    accessToken: 'pk.eyJ1IjoidGlmZnlsb3UiLCJhIjoiY2lxcHZza2piMDJrY2Zvbm54MnZiY3BzeSJ9.GYX6eqoBpA1OFX6AyocccA'
+		}).addTo(mymap);
+	</script>
+</body>
+</html>

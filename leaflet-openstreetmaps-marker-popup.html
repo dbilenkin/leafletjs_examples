@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Leaflet</title>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+	<style>
+		html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  	}
+  	#mapid {
+    	height: 100%;
+  	}
+	</style>
+</head>
+<body>
+
+	<div id="mapid"></div>
+
+
+	<script>
+		var map = L.map('mapid').setView([37.5550910, -77.4584330], 16);
+
+		L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		    attribution: 'Map data &copy; OpenStreetMaps'
+		}).addTo(map);
+
+		var marker = L.marker([37.5550910, -77.4584330]).addTo(map);
+		var circle = L.circle([37.5550910, -77.4584330], 30, {
+		    color: 'red',
+		    fillColor: '#f03',
+		    fillOpacity: 0.5
+		}).addTo(map);
+		
+		marker.bindPopup("804RVA for the win!").openPopup();
+
+
+	</script>
+	
+</body>
+</html>

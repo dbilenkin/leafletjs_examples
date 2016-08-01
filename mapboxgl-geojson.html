@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mapbox GL</title>
+	<script src='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.js'></script>
+	<link href='https://api.mapbox.com/mapbox-gl-js/v0.21.0/mapbox-gl.css' rel='stylesheet' />
+	<style>
+	  html, body { height: 100%; margin:0; padding:0; }
+	  #map { height: 100%; width:100%; }
+	</style>
+</head>
+<body>
+
+	<div id='map'></div>
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1IjoidGlmZnlsb3UiLCJhIjoiY2lxcHZza2piMDJrY2Zvbm54MnZiY3BzeSJ9.GYX6eqoBpA1OFX6AyocccA';
+		var map = new mapboxgl.Map({
+	    container: 'map',
+	    style: 'mapbox://styles/mapbox/streets-v9',
+			center: [-77.4584330, 37.5550910],
+			zoom: 9
+		});
+
+		map.on('load', function () {
+	    map.addSource("points", {
+        "type": "geojson",
+        "data": {
+          "type": "FeatureCollection",
+          "features": [{
+              "type": "Feature",
+              "geometry": {
+                  "type": "Point",
+                  "coordinates": [-77.4584330, 37.5550910]
+              },
+              "properties": {
+                  "title": "804RVA",
+                  "icon": "monument"
+              }
+          }]
+        }
+	    });
+
+	    map.addLayer({
+        "id": "points",
+        "type": "symbol",
+        "source": "points",
+        "layout": {
+          "icon-image": "{icon}-15",
+          // "text-field": "{title}",
+          "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+          "text-offset": [0, 0.6],
+          "text-anchor": "top"
+        }
+	    });
+		});
+
+	</script>
+
+</body>
+</html>
