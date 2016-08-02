@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leafletjs</title>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #mapid {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="mapid"></div>
+
+  <script>
+    var map = L.map('mapid').setView([37.5550910, -77.4584330], 16);
+
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; OpenStreetMaps'
+    }).addTo(map);
+
+    var marker = L.marker([37.5550910, -77.4584330], {
+      draggable: true
+    }).addTo(map);
+    marker.bindPopup('Hello from 804!').openPopup();
+
+    var pointA = new L.LatLng(37.5550910, -77.4584330);
+    var pointB = new L.LatLng(37.5544740,-77.4572720);
+    var pointC = new L.LatLng(37.5557990,-77.4562510);
+    var pointD = new L.LatLng(37.5550910, -77.4584330);
+    var pointList = [pointA, pointB, pointC, pointD];
+
+    var line = new L.Polyline(pointList, {
+      color: 'red',
+      dashArray: [1, 5],
+      weight: 3,
+      opacity: 0.5,
+      smoothFactor: 1
+    });
+    line.addTo(map);
+
+
+  </script>
+
+</body>
+</html>

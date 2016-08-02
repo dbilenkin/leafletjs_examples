@@ -20,11 +20,8 @@
 
   <div id="mapid"></div>
 
-  <script src="http://maps.google.com/maps/api/js?key=AIzaSyB9_zsbvN-JH-zVl63NuehXmsCR38LXg7k&callback=initMap"></script>
-  <script src="http://matchingnotes.com/javascripts/leaflet-google.js"></script>
-  
   <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=Qb9GKeGmNWRk8qKlF388auSGk3QkzYK1"></script>
-  
+
   <script>
     var map = L.map('mapid').setView([37.5550910, -77.4584330], 10);
 
@@ -41,14 +38,11 @@
     //     attribution: '&copy; OpenCycleMap'
     // }).addTo(map);
 
-    // GOOGLE MAP
-    // map.addLayer(new L.Google('ROADMAP'));
-
     // MAPQUEST
     // map.addLayer(MQ.mapLayer());
 
     // MAPBOX
-    // L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
+    // L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/street-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
     //     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
     //     accessToken: 'pk.eyJ1IjoidGlmZnlsb3UiLCJhIjoiY2lxcHZza2piMDJrY2Zvbm54MnZiY3BzeSJ9.GYX6eqoBpA1OFX6AyocccA'
     // }).addTo(map);
@@ -66,10 +60,10 @@
     //     fillColor: '#f03',
     //     fillOpacity: 0.5
     // }).addTo(map);
-    
+
     // marker.bindPopup("804RVA for the win!").openPopup();
 
   </script>
-  
+
 </body>
 </html>

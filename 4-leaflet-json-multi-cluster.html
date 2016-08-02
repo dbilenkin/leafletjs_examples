@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leafletjs</title>
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+  <script src="pokegeojson.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/leaflet.markercluster.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.5.0/MarkerCluster.Default.css">
+
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #mapid {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="mapid"></div>
+
+  <script>
+    var map = L.map('mapid').setView([37.5550910, -77.4584330], 16);
+
+    L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data &copy; OpenStreetMaps',
+      maxZoom: 20
+    }).addTo(map);
+
+    var markers = L.markerClusterGroup();
+
+    L.geoJson(pokes, {
+      pointToLayer: function (feature, latlng) {
+        var lng = latlng.lng,
+            lat = latlng.lat;
+        var marker = L.marker([lng, lat]);
+        var str = '<h3>' + feature.properties.name + '</h3><img style="width:150px;" src="' + feature.properties.image + '" />';
+
+        markers.addLayer(marker);
+
+        return marker.bindPopup(str);
+      }
+    });
+
+    map.addLayer(markers);
+
+  </script>
+
+</body>
+</html>
