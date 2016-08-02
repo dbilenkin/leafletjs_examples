@@ -26,10 +26,8 @@
 
     L.geoJson(pokes, {
       pointToLayer: function (feature, latlng) {
-        var lng = latlng.lng,
-            lat = latlng.lat;
 
-        var marker = L.marker([lng, lat]);
+        var marker = L.marker(latlng);
         var str = '<h3>' + feature.properties.name + '</h3><img style="width:150px;" src="' + feature.properties.image + '" />';
 
         return marker.bindPopup(str);
