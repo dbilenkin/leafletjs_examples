@@ -20,7 +20,7 @@
 
   <div id="mapid"></div>
 
-  <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=Qb9GKeGmNWRk8qKlF388auSGk3QkzYK1"></script>
+  <script src="https://www.mapquestapi.com/sdk/leaflet/v2.2/mq-map.js?key=YOUR_API_KEY"></script>
 
   <script>
     var map = L.map('mapid').setView([37.5550910, -77.4584330], 10);
@@ -44,14 +44,14 @@
     // MAPBOX
     // L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/street-v9/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
     //     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    //     accessToken: 'pk.eyJ1IjoidGlmZnlsb3UiLCJhIjoiY2lxcHZza2piMDJrY2Zvbm54MnZiY3BzeSJ9.GYX6eqoBpA1OFX6AyocccA'
+    //     accessToken: 'YOUR_API_TOKEN'
     // }).addTo(map);
 
 
     // MAPBOX CUSTOM MAP
     // L.tileLayer('https://api.mapbox.com/styles/v1/tiffylou/cir02qvgk000wbvnotd1vl0rb/tiles/256/{z}/{x}/{y}?access_token={accessToken}', {
     //     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    //     accessToken: 'pk.eyJ1IjoidGlmZnlsb3UiLCJhIjoiY2lxcHZza2piMDJrY2Zvbm54MnZiY3BzeSJ9.GYX6eqoBpA1OFX6AyocccA'
+    //     accessToken: 'YOUR_API_TOKEN'
     // }).addTo(map);
 
     var marker = L.marker([37.5550910, -77.4584330]).addTo(map);

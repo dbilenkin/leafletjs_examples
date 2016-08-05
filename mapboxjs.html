@@ -11,13 +11,13 @@
 	  body { margin:0; padding:0; }
 	  #map { position:absolute; top:0; bottom:0; width:100%; }
 	</style>
-	
+
 </head>
 <body>
 	<div id='map'></div>
-	
+
 	<script>
-		L.mapbox.accessToken = 'pk.eyJ1IjoidGlmZnlsb3UiLCJhIjoiY2lxcHZza2piMDJrY2Zvbm54MnZiY3BzeSJ9.GYX6eqoBpA1OFX6AyocccA';
+		L.mapbox.accessToken = 'YOUR_API_TOKEN';
 
 		var map = L.mapbox.map('map', 'mapbox.streets')
 		    .setView([37.5550910, -77.4584330], 9);
@@ -29,9 +29,9 @@
 			    fillColor: '#f03',
 			    fillOpacity: 0.5
 			}).addTo(map);
-			
+
 		marker.bindPopup("804RVA for the win!").openPopup();
-	
+
 	</script>
 </body>
 </html>
